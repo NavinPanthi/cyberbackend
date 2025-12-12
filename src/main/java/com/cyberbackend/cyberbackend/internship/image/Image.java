@@ -24,7 +24,7 @@ public class Image {
 
     private String imageType;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "internship_id", nullable = false)
     @JsonBackReference
     private Internship internship;

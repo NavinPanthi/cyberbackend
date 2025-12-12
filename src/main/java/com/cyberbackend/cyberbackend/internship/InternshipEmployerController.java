@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/employers/internships")
+@RequestMapping("/api/employer/internships")
 @NoArgsConstructor
 @AllArgsConstructor
 public class InternshipEmployerController {

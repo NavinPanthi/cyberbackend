@@ -43,11 +43,9 @@ public class SpringSecurity {
         return http.cors(Customizer.withDefaults()).
         authorizeHttpRequests(request -> request
                         .requestMatchers("/api/public/**").permitAll()
-                        .requestMatchers("/api/categories").permitAll()
-                        .requestMatchers("/api/users/orders/**", "api/users/cart/**").hasRole("user")
                         .requestMatchers("/api/users/**").authenticated()
                         .requestMatchers("/api/admin/**").hasRole("admin")
-                        .requestMatchers("api/sellers/**").hasRole("seller")
+                        .requestMatchers("api/employer/**").hasRole("employer")
                         .anyRequest().permitAll())
                 .exceptionHandling(exception -> exception
                         .authenticationEntryPoint(authenticationEntryPoint) // Handles 401 Unauthorized

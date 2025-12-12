@@ -189,4 +189,25 @@ public class InternshipService {
     public Internship saveInternship(Internship internship) {
         return internshipRepository.save(internship);
     }
+
+    public InternshipResponseDTO getInternshipResponse(Internship internship) {
+
+        return InternshipResponseDTO.builder()
+                .id(internship.getId())
+                .title(internship.getTitle())
+                .description(internship.getDescription())
+                .type(internship.getType())
+                .level(internship.getLevel())
+                .payment(internship.getPayment())
+                .listingDate(internship.getListingDate())
+                .images(internship.getImages())  // full Image objects
+                .employerFullName(
+                        internship.getUser() != null
+                                ? internship.getUser().getFullName()
+                                : null
+                )
+                .build();
+    }
+
+
 }

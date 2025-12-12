@@ -46,10 +46,9 @@ public class Internship {
     private Date listingDate = new Date();
 
     @ToString.Exclude
-    @OneToOne(mappedBy = "internship", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "internship", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @JsonManagedReference
     private List<Image> images;
-
 
     @ToString.Exclude
     @ManyToOne
